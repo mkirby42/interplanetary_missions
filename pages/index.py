@@ -127,13 +127,13 @@ column1 = dbc.Col(
             """
             Humanity roles the dice with extinction every day.
 
-            Any day could be our last as a species. It would take an event of
-            epic proportions, a truly global catastrophe, but history shows
+            Any day could be our last as a species; it would take an event of
+            epic proportions, a truly global catastrophe. However, history shows
             us that global catastrophes, while rare, occur with alarming
             regularity.
 
             If Humanity wishes to survive for longer than what ammounts to a
-            cosmic rounding error we must expand beyond our home planet. An
+            cosmic rounding error, we must expand beyond our home planet. An
             entire universe bekons, but alas space is hard.
             """
         ),
