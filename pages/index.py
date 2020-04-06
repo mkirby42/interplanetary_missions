@@ -1,7 +1,6 @@
 #index
 from datetime import datetime as dt
 import datetime
-import pygmo as pg
 import pykep as pk
 import numpy as np
 from scipy import array
