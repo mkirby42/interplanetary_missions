@@ -75,7 +75,7 @@ def create_pork_chop_plot(start_date, end_date, origin = 'earth', destination = 
             ),
             xcalendar = 'julian',
             contours_coloring = 'lines',
-            line_width  =1,
+            line_width  = 1,
             colorbar = dict(
                 title = 'Delta V (m/s)', # title here
                 titleside = 'right',
@@ -85,6 +85,9 @@ def create_pork_chop_plot(start_date, end_date, origin = 'earth', destination = 
                     color = "#7f7f7f"
                     )
             ),
+            hovertemplate = "Launch Date: %{x}<br>" +
+                "Time of Flight: %{y} Days<br>" +
+                "Delta-V: %{z:.0f} m/s<br>",
         ))
     fig.update_layout(
         xaxis_title = "Departure Date",
@@ -113,16 +116,28 @@ column1 = dbc.Col(
     [
         dcc.Markdown(
             """
-
-            ## Porkchop Plots
-
-            A porkchop plot (also pork-chop plot) is a chart that shows contours of equal characteristic energy (C3) against combinations of launch date and arrival date for a particular interplanetary flight.
-
-            By examining the results of the porkchop plot, engineers can determine when launch opportunities exist (a launch window) that is compatible with the capabilities of a particular spacecraft. A given contour, called a porkchop curve, represents constant C3, and the center of the porkchop the optimal minimum C3. The orbital elements of the solution, where the fixed values are the departure date, the arrival date, and the length of the flight, were first solved mathematically in 1761 by Johann Heinrich Lambert, and the equation is generally known as Lambert's problem (or theorem). -Wikipedia
+            # Why Go To Space?
             """
         ),
-    ],
-    md=4,
+        html.Div(
+            id = 'div_4',
+            style={'marginBottom': 25, 'marginTop': 25}
+        ),
+        dcc.Markdown(
+            """
+            Humanity roles the dice with extinction every day.
+
+            Any day could be our last as a species. It would take an event of
+            epic proportions, a truly global catastrophe, but history shows
+            us that global catastrophes, while rare, occur with alarming
+            regularity.
+
+            If Humanity wishes to survive for longer than what ammounts to a
+            cosmic rounding error we must expand beyond our home planet. An
+            entire universe bekons, but alas space is hard.
+            """
+        ),
+    ], width = 5,
 )
 
 
@@ -130,7 +145,8 @@ column2 = dbc.Col(
     [
         dcc.Graph(id = 'plot',
             figure = create_pork_chop_plot(dt(2020, 4, 1).date(),
-                                           dt(2020, 10, 1).date())
+                                           dt(2020, 10, 1).date()),
+            config = {'displayModeBar': False},
         ),
     ],
 )

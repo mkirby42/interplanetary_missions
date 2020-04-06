@@ -7,14 +7,15 @@ from dash.dependencies import Input, Output
 
 # Imports from this application
 from app import app, server
-from pages import index, trajectory
+from pages import index, calculate_dv, Hohmann_transfer
 
 
 navbar = dbc.NavbarSimple(
     brand='Interplanetary Missions',
     brand_href='/',
     children=[
-        dbc.NavItem(dcc.Link('Trajectory', href='/trajectory', className='nav-link')),
+        dbc.NavItem(dcc.Link('Delta-V', href='/calculate_dv', className='nav-link')),
+        dbc.NavItem(dcc.Link('Hohmann Transfer', href='/Hohmann_transfer', className='nav-link')),
     ],
     sticky='top',
     color='light',
@@ -55,8 +56,10 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == '/':
         return index.layout
-    elif pathname == '/trajectory':
-        return trajectory.layout
+    elif pathname == '/calculate_dv':
+        return calculate_dv.layout
+    elif pathname == '/Hohmann_transfer':
+        return Hohmann_transfer.layout
     else:
         return dcc.Markdown('## Page not found')
 
