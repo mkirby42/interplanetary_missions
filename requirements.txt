@@ -51,7 +51,7 @@ prometheus-client==0.7.1
 prompt-toolkit==3.0.4
 ptyprocess==0.6.0
 Pygments==2.6.1
-pykep=2.4.1
+pykep==2.4.1
 pyparsing==2.4.6
 pyrsistent==0.16.0
 python-dateutil==2.8.1
