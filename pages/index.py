@@ -27,20 +27,20 @@ def create_pork_chop_plot(start_date, end_date, origin = 'earth', destination = 
     start_epochs = np.arange(start_epoch, end_epoch, 1.0)
 
     # Time of flight (y axis)
-    duration = np.arange(180.0, 470.0, 1.0)
+    duration = np.arange(50.0, 500.0, 3.0)
 
     # Origin
-    earth = pk.planet.jpl_lp(origin)
+    origin_planet = pk.planet.jpl_lp(origin)
     # Destination
-    mars = pk.planet.jpl_lp(destination)
+    destination_planet = pk.planet.jpl_lp(destination)
 
     data = list()
     for start in start_epochs:
         row = list()
         for T in duration:
-            r1,v1 = earth.eph(pk.epoch(start, 'mjd2000'))
-            r2,v2 = mars.eph(pk.epoch(start+T, 'mjd2000'))
-            l = pk.lambert_problem(r1, r2, T*60*60*24, earth.mu_central_body)
+            r1,v1 = origin_planet.eph(pk.epoch(start, 'mjd2000'))
+            r2,v2 = destination_planet.eph(pk.epoch(start+T, 'mjd2000'))
+            l = pk.lambert_problem(r1, r2, T*60*60*24, pk.MU_SUN)
             DV1 = np.linalg.norm(np.array(v1) - np.array(l.get_v1()[0]))
             DV2 = np.linalg.norm(np.array(v2) - np.array(l.get_v2()[0]))
             DV1 = max([0, DV1 - start_epoch])

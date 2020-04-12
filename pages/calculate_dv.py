@@ -54,6 +54,9 @@ column1 = dbc.Col(
                     id = 'arival_body',
                     options=[
                         {'label': 'Mars', 'value': 'mars'},
+                        {'label': 'Venus', 'value': 'venus'},
+                        {'label': 'Jupiter', 'value': 'jupiter'},
+                        {'label': 'Saturn', 'value': 'saturn'},
                     ],
                     value='mars'
                 ),
