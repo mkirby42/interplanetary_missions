@@ -1,4 +1,3 @@
-#index
 from datetime import datetime as dt
 from datetime import timedelta
 import pykep as pk
