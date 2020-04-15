@@ -31,9 +31,9 @@ column1 = dbc.Col(
         ),
         dcc.Markdown(
         """
-        In order to travel from one body to another in space we must produce a change in velocity (delta-v).
+        To travel from one body to another in space we must produce a change in velocity (delta-v).
         The required delta-v for a mission can be found by using a porkchop plot, which shows contours of
-        required delta-v against combinations of launch date and arrival date for a particular interplanetary trajectory
+        required delta-v against combinations of the launch date and arrival date for a particular interplanetary trajectory
         """
         ),
         dcc.Markdown(

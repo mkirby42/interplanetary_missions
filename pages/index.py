@@ -124,16 +124,16 @@ column1 = dbc.Col(
         ),
         dcc.Markdown(
             """
-            Humanity roles the dice with extinction every day.
+            Humanity rolls the dice with extinction every day.
 
             Any day could be our last as a species; it would take an event of
             epic proportions, a truly global catastrophe. However, history shows
             us that global catastrophes, while rare, occur with alarming
             regularity.
 
-            If Humanity wishes to survive for longer than what ammounts to a
+            If Humanity wishes to survive for longer than what amounts to a
             cosmic rounding error, we must expand beyond our home planet. An
-            entire universe bekons, but alas space is hard.
+            entire universe beckons, but alas Space is hard.
             """
         ),
     ], width = 5,
@@ -142,12 +142,13 @@ column1 = dbc.Col(
 
 column2 = dbc.Col(
     [
-        dcc.Graph(id = 'plot',
-            figure = create_pork_chop_plot(dt(2020, 4, 1).date(),
-                                           dt(2020, 10, 1).date()),
-            config = {'displayModeBar': False},
-        ),
-    ],
+        #dcc.Graph(id = 'plot',
+            #figure = create_pork_chop_plot(dt(2020, 4, 1).date(),
+                                           #dt(2020, 10, 1).date()),
+            #config = {'displayModeBar': False},
+        #),
+        html.Img(id = 'image', src = 'assets/missle_row.jpg', width = 650, height = 500)
+    ], width = 7
 )
 
 
