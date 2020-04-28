@@ -132,21 +132,17 @@ column1 = dbc.Col(
             regularity.
 
             If Humanity wishes to survive for longer than what amounts to a
-            cosmic rounding error, we must expand beyond our home planet. An
-            entire universe beckons, but alas Space is hard.
+            cosmic rounding error, we must expand beyond our home planet.
+            An entire universe beckons, but alas Space is hard.
             """
         ),
+        dcc.Link(dbc.Button('BLAST OFF!', color='primary'), href='/calculate_dv')
     ], width = 5,
 )
 
 
 column2 = dbc.Col(
     [
-        #dcc.Graph(id = 'plot',
-            #figure = create_pork_chop_plot(dt(2020, 4, 1).date(),
-                                           #dt(2020, 10, 1).date()),
-            #config = {'displayModeBar': False},
-        #),
         html.Img(id = 'image', src = 'assets/missle_row.jpg', width = 650, height = 500)
     ], width = 7
 )
