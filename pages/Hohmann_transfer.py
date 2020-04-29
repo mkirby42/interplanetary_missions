@@ -5,8 +5,6 @@ import numpy as np
 from scipy import array
 import pandas as pd
 
-from .index import create_pork_chop_plot
-
 import dash
 import dash_bootstrap_components as dbc
 import dash_core_components as dcc
